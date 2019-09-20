@@ -1,0 +1,13 @@
+:root {
+	/* Color */
+	--color-light: #96bbe0;
+	--color-dark: #32174d;
+	--color-font-light: #f5f5f5;
+	--color-disabled: #d1c4c4;
+
+	/* Sizes */
+	--button-font-size: 0.9rem;
+	--border-size: 0.1rem;
+	--border-radius-default: 5px;
+	--border-radius: 10px;
+}

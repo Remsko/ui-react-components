@@ -1,4 +1,10 @@
+@import url('https://fonts.googleapis.com/css?family=Lato:400,700|Oxygen:400,700&display=swap');
+
 :root {
+	/* Fonts */
+	--font-title: 'Oxygen', sans-serif;
+	--font: 'Lato', sans-serif;
+
 	/* Color */
 	--color-light: #96bbe0;
 	--color-dark: #32174d;

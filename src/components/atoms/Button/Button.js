@@ -25,8 +25,7 @@ export const ButtonTheme = {
 };
 
 const Button = props => {
-	const { type, onClick, disabled, className, children } = props;
-	const { size, theme } = props;
+	const { type, size, theme, onClick, disabled, className, children } = props;
 	const classMerge = classnames(
 		styles.button,
 		styles[size],
@@ -40,7 +39,8 @@ const Button = props => {
 			type={type}
 			onClick={onClick}
 			disabled={disabled}
-			className={classMerge}>
+			className={classMerge}
+		>
 			{children}
 		</button>
 	);

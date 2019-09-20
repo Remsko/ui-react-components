@@ -1,0 +1,42 @@
+@import '../../../styles/variables.css';
+
+.title {
+	font-family: var(--font-title);
+	font-weight: bold;
+}
+
+/*
+** Size
+*/
+.big {
+	font-size: 2rem;
+}
+
+.very-big {
+	font-size: 3rem;
+	letter-spacing: 0.5px;
+}
+
+.very-very-big {
+	font-size: 4rem;
+	letter-spacing: 1px;
+}
+
+/*
+** Theme
+*/
+.black {
+	color: #000000;
+}
+
+.white {
+	color: var(--color-font-light);
+}
+
+.light {
+	color: var(--color-light);
+}
+
+.dark {
+	color: var(--color-dark);
+}

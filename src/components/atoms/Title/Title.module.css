@@ -1,6 +1,7 @@
 @import '../../../styles/variables.css';
 
 .title {
+	margin: 0;
 	font-family: var(--font-title);
 	font-weight: bold;
 }
@@ -8,16 +9,16 @@
 /*
 ** Size
 */
-.big {
+.small {
 	font-size: 2rem;
 }
 
-.very-big {
+.medium {
 	font-size: 3rem;
 	letter-spacing: 0.5px;
 }
 
-.very-very-big {
+.large {
 	font-size: 4rem;
 	letter-spacing: 1px;
 }

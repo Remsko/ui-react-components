@@ -5,9 +5,9 @@ import classnames from 'classnames';
 import styles from './Title.module.css';
 
 export const TitleSize = {
-	BIG: 'big',
-	VERY_BIG: 'very-big',
-	VERY_VERY_BIG: 'very-very-big'
+	SMALL: 'small',
+	MEDIUM: 'medium',
+	LARGE: 'large'
 };
 
 export const TitleTheme = {
@@ -37,7 +37,7 @@ Title.propTypes = {
 };
 
 Title.defaultProps = {
-	size: TitleSize.BIG,
+	size: TitleSize.MEDIUM,
 	theme: TitleTheme.DEFAULT,
 	className: ''
 };

@@ -9,5 +9,5 @@ const loadStories = () => {
 	req.keys().forEach(filename => req(filename));
 };
 
-addDecorator((story, context) => withInfo(context.kind)(story)(context));
+addDecorator(withInfo);
 configure(loadStories, module);

@@ -1,0 +1,53 @@
+@import '../../../styles/variables.css';
+
+.field {
+	position: relative;
+	height: calc(var(--field-size) + var(--border-size) * 2);
+	width: 100%;
+}
+
+.field__input {
+	position: absolute;
+	width: calc(100% - var(--input-padding) * 2);
+}
+
+.field__label {
+	position: absolute;
+	color: var(--color-disabled);
+	top: var(--input-padding);
+	left: var(--input-padding);
+	pointer-events: none;
+	transition: all 300ms ease;
+}
+
+.field .field__input[class$='focus'] + .field__label {
+	color: var(--color-dark);
+	transform: translateY(
+		calc((var(--field-size) - var(--input-padding)) * -1)
+	);
+	font-size: calc(var(--input-font-size) - 0.2rem);
+}
+
+.field__span {
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	width: 100%;
+	height: var(--border-size);
+	background: var(--color-disabled);
+}
+
+.field .field__span:before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 0%;
+	height: 100%;
+	background: linear-gradient(120deg, var(--color-light), var(--color-dark));
+	transition: width 300ms ease;
+}
+
+.field .field__input[class$='focus'] ~ .field__span:before {
+	width: 100%;
+}

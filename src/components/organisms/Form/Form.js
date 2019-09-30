@@ -1,8 +1,9 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import classnames from 'classnames';
 
 import Title, { TitleTheme, TitleSize } from '../../atoms/Title/Title';
-import Button from '../../atoms/Button/Button';
+import Button, { ButtonTheme } from '../../atoms/Button/Button';
 import Field, { FieldType } from '../../molecules/Field/Field';
 import styles from './Form.module.css';
 
@@ -42,7 +43,11 @@ const Form = props => {
 				type={FieldType.PASSWORD}
 				className={styles['form__field']}
 			/>
-			<Button className={styles['form__button']} disabled>
+			<Button
+				theme={ButtonTheme.REVERSED_DARK}
+				disabled
+				className={styles['form__button']}
+			>
 				{formBottomText.signIn.button}
 			</Button>
 			<div className={styles['form__bottom-text']}>
@@ -50,6 +55,14 @@ const Form = props => {
 			</div>
 		</form>
 	);
+};
+
+Form.propTypes = {
+	className: PropTypes.string
+};
+
+Form.defaultProps = {
+	className: ''
 };
 
 export default Form;

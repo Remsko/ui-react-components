@@ -1,8 +1,10 @@
+@import '../../../styles/variables.css';
+
 .form {
-	background: #fff0f5dc;
+	background: var(--color-form);
 	width: 360px;
 	height: 580px;
-	border-radius: 5px;
+	border-radius: var(--border-radius-default);
 	padding: 40px;
 }
 
@@ -21,7 +23,7 @@
 }
 
 .form__bottom-text {
-	color: #32174d;
+	color: var(--color-dark);
 	margin-top: 60px;
 	text-align: center;
 	font-size: 15px;

@@ -22,9 +22,8 @@
 
 .field .field__input[class$='focus'] + .field__label {
 	color: var(--color-dark);
-	transform: translateY(
-		calc((var(--field-size) - var(--input-padding)) * -1)
-	);
+	transform: translateX(calc(var(--input-padding) * -1))
+		translateY(calc((var(--field-size) - var(--input-padding)) * -1));
 	font-size: calc(var(--input-font-size) - 0.2rem);
 }
 

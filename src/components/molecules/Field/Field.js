@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import classnames from 'classnames';
 
 import Input, { InputType } from '../../atoms/Input/Input';
@@ -18,6 +19,18 @@ const Field = props => {
 			<span className={styles['field__span']} />
 		</div>
 	);
+};
+
+Field.propTypes = {
+	type: PropTypes.string,
+	label: PropTypes.string,
+	className: PropTypes.string
+};
+
+Field.defaultProps = {
+	type: FieldType.TEXT,
+	label: '',
+	className: ''
 };
 
 export default Field;

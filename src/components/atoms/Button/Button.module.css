@@ -96,3 +96,7 @@
 	border: var(--border-size) solid var(--color-disabled);
 	cursor: default;
 }
+.disabled:hover {
+	color: var(--color-disabled);
+	background: #fff0f5;
+}

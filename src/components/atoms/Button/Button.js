@@ -62,7 +62,8 @@ Button.defaultProps = {
 	theme: ButtonTheme.DEFAULT,
 	onClick: () => {},
 	disabled: false,
-	className: ''
+	className: '',
+	children: ''
 };
 
 export default Button;

@@ -29,7 +29,7 @@
 
 .field__span {
 	position: absolute;
-	bottom: 0;
+	bottom: calc(var(--border-size) * -1);
 	right: 0;
 	width: 100%;
 	height: var(--border-size);

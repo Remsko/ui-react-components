@@ -1,7 +1,7 @@
 @import '../../../styles/variables.css';
 
 .input {
-	font-family: var(--font-title);
+	font-family: var(--font);
 	background: transparent;
 	border: none;
 	outline: none;

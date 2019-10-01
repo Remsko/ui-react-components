@@ -2,67 +2,49 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 
-import Title, { TitleTheme, TitleSize } from '../../atoms/Title/Title';
-import Button, { ButtonTheme } from '../../atoms/Button/Button';
-import Field, { FieldType } from '../../molecules/Field/Field';
+import Title, { TitleTheme } from '../../atoms/Title/Title';
+import Button, { ButtonType } from '../../atoms/Button/Button';
+import FieldList from '../../molecules/FieldList/FieldList';
 import styles from './Form.module.css';
 
-export const formBottomText = {
-	signIn: {
-		query: "Don't have account ?",
-		link: 'Sign up',
-		button: 'Login'
-	},
-	signUp: {
-		query: 'Already have account ?',
-		link: 'Sign in',
-		button: 'Submit'
-	}
-};
-
 const Form = props => {
-	const { className } = props;
+	const { submit, title, fields, button, className, children } = props;
 	const classMerge = classnames(styles.form, className);
 
 	return (
-		<form className={classMerge}>
-			<Title
-				theme={TitleTheme.DARK}
-				size={TitleSize.SMALL}
-				className={styles['form__title']}
-			>
-				Welcome
+		<form className={classMerge} onSubmit={submit}>
+			<Title theme={TitleTheme.DARK} className={styles['form__title']}>
+				{title}
 			</Title>
-			<Field
-				label='Email'
-				type={FieldType.EMAIL}
-				className={styles['form__field']}
-			/>
-			<Field
-				label='Password'
-				type={FieldType.PASSWORD}
-				className={styles['form__field']}
-			/>
+			<FieldList fields={fields} className={styles['form__field']} />
 			<Button
-				theme={ButtonTheme.REVERSED_DARK}
-				disabled
+				type={ButtonType.SUBMIT}
+				disabled={false}
 				className={styles['form__button']}
 			>
-				{formBottomText.signIn.button}
+				{button}
 			</Button>
-			<div className={styles['form__bottom-text']}>
-				{formBottomText.signIn.query} {formBottomText.signIn.link}
-			</div>
+			<div className={styles['form__bottom-text']}>{children}</div>
 		</form>
 	);
 };
 
 Form.propTypes = {
-	className: PropTypes.string
+	submit: PropTypes.func,
+	title: PropTypes.string,
+	fields: PropTypes.array,
+	button: PropTypes.string,
+	className: PropTypes.string,
+	children: PropTypes.any
 };
 
 Form.defaultProps = {
-	className: ''
+	submit: () => {},
+	title: '',
+	fields: [],
+	button: '',
+	className: '',
+	children: ''
 };
 
 export default Form;

@@ -1,0 +1,13 @@
+@import './variables.css';
+
+.link {
+	display: inline-block;
+	color: var(--color-light);
+	cursor: pointer;
+	transition: all 250ms ease-out 0s;
+}
+
+.link:hover {
+	transform: translateY(-3px);
+	color: var(--color-dark);
+}

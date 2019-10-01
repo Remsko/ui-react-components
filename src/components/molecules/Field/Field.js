@@ -9,12 +9,12 @@ import styles from './Field.module.css';
 export const FieldType = { ...InputType };
 
 const Field = props => {
-	const { type, label, className } = props;
+	const { input, label, className } = props;
 	const classMerge = classnames(styles.field, className);
 
 	return (
 		<div className={classMerge}>
-			<Input className={styles['field__input']} type={type} />
+			<Input className={styles['field__input']} {...input} />
 			<Label className={styles['field__label']}>{label}</Label>
 			<span className={styles['field__span']} />
 		</div>
@@ -22,13 +22,13 @@ const Field = props => {
 };
 
 Field.propTypes = {
-	type: PropTypes.string,
+	input: PropTypes.object,
 	label: PropTypes.string,
 	className: PropTypes.string
 };
 
 Field.defaultProps = {
-	type: FieldType.TEXT,
+	input: {},
 	label: '',
 	className: ''
 };

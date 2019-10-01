@@ -15,12 +15,12 @@
 
 .medium {
 	font-size: 3rem;
-	letter-spacing: 0.5px;
+	letter-spacing: 0.03rem;
 }
 
 .large {
 	font-size: 4rem;
-	letter-spacing: 1px;
+	letter-spacing: 0.06rem;
 }
 
 /*

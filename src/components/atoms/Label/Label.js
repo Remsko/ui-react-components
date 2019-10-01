@@ -17,11 +17,13 @@ const Label = props => {
 
 Label.propTypes = {
 	theme: PropTypes.string,
+	className: PropTypes.string,
 	children: PropTypes.string
 };
 
 Label.defaultProps = {
 	theme: LabelTheme.DEFAULT,
+	className: '',
 	children: ''
 };
 

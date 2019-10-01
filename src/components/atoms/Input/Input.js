@@ -17,9 +17,8 @@ export const InputTheme = {
 };
 
 const Input = props => {
-	const [inputValue, setInputValue] = useState('');
 	const [focus, setFocus] = useState('');
-	const { type, theme, className } = props;
+	const { type, value, onChange, theme, className } = props;
 	const classMerge = classnames(
 		styles.input,
 		styles[theme],
@@ -27,16 +26,12 @@ const Input = props => {
 		focus
 	);
 
-	const onChangeHandler = event => {
-		setInputValue(event.target.value);
-	};
-
 	const onFocusHandler = () => {
 		setFocus('focus');
 	};
 
 	const onBlurHandler = () => {
-		if (inputValue === '') {
+		if (value === '') {
 			setFocus('');
 		}
 	};
@@ -47,20 +42,24 @@ const Input = props => {
 			onFocus={onFocusHandler}
 			onBlur={onBlurHandler}
 			type={type}
-			value={inputValue}
-			onChange={onChangeHandler}
+			value={value}
+			onChange={onChange}
 		/>
 	);
 };
 
 Input.propTypes = {
 	type: PropTypes.string,
+	value: PropTypes.string,
+	onChange: PropTypes.func,
 	theme: PropTypes.string,
 	className: PropTypes.string
 };
 
 Input.defaultProps = {
 	type: InputType.TEXT,
+	value: '',
+	onChange: () => {},
 	theme: InputTheme.DEFAULT,
 	className: ''
 };

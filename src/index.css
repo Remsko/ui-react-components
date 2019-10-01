@@ -11,6 +11,6 @@
 body {
 	-webkit-font-smoothing: antialiased;
 	min-height: 100vh;
-	background: linear-gradient(120deg, #96bbe0de, #32174dd8),
+	background: linear-gradient(120deg, #96bbe0d8, #32174dd8),
 		url('./road.jpg') center/cover no-repeat border-box;
 }

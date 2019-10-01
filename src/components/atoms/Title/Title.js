@@ -37,7 +37,7 @@ Title.propTypes = {
 };
 
 Title.defaultProps = {
-	size: TitleSize.MEDIUM,
+	size: TitleSize.SMALL,
 	theme: TitleTheme.DEFAULT,
 	className: '',
 	chidren: ''

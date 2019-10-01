@@ -1,10 +1,9 @@
-@import url('https://fonts.googleapis.com/css?family=Lato:400,700|Oxygen:400,700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Nunito:400,700|Roboto:400,700&display=swap');
 
 :root {
 	/* Fonts */
-	--font-title: 'Oxygen', sans-serif;
-	--font: 'Lato', sans-serif;
-
+	--font-title: 'Nunito', sans-serif;
+	--font: 'Roboto', sans-serif;
 	/* Colors */
 	--color-light: #96bbe0;
 	--color-dark: #32174d;
@@ -18,7 +17,7 @@
 	/* Sizes */
 	--button-font-size: 0.9rem;
 	--input-font-size: 1rem;
-	--border-size: 0.1rem;
+	--border-size: 2px;
 	--border-radius-default: 5px;
 	--border-radius: 10px;
 	--field-size: calc(var(--input-font-size) + var(--input-padding) * 2.5);

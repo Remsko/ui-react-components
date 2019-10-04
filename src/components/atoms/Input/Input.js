@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
+import classnames from 'classnames';
 
 import styles from './Input.module.css';
-import classnames from 'classnames';
 
 export const InputType = {
 	TEXT: 'text',
@@ -18,7 +18,7 @@ export const InputTheme = {
 
 const Input = props => {
 	const [focus, setFocus] = useState('');
-	const { type, value, onChange, theme, className } = props;
+	const { type, value, name, onChange, theme, className } = props;
 	const classMerge = classnames(
 		styles.input,
 		styles[theme],
@@ -39,6 +39,7 @@ const Input = props => {
 	return (
 		<input
 			className={classMerge}
+			name={name}
 			onFocus={onFocusHandler}
 			onBlur={onBlurHandler}
 			type={type}
@@ -50,6 +51,7 @@ const Input = props => {
 
 Input.propTypes = {
 	type: PropTypes.string,
+	name: PropTypes.string,
 	value: PropTypes.string,
 	onChange: PropTypes.func,
 	theme: PropTypes.string,
@@ -58,6 +60,7 @@ Input.propTypes = {
 
 Input.defaultProps = {
 	type: InputType.TEXT,
+	name: '',
 	value: '',
 	onChange: () => {},
 	theme: InputTheme.DEFAULT,

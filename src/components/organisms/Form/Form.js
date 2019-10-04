@@ -2,21 +2,59 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 
+import useForm from '../../../hooks/useForm';
 import Title, { TitleTheme } from '../../atoms/Title/Title';
 import Button, { ButtonType } from '../../atoms/Button/Button';
-import FieldList from '../../molecules/FieldList/FieldList';
+import Field from '../../molecules/Field/Field';
 import styles from './Form.module.css';
 
 const Form = props => {
-	const { submit, title, fields, button, className, children } = props;
+	const {
+		onSubmit,
+		errors,
+		title,
+		fields,
+		button,
+		className,
+		children
+	} = props;
 	const classMerge = classnames(styles.form, className);
 
+	let initialInputs = {};
+	fields.forEach(field => {
+		initialInputs[field.name] = '';
+	});
+
+	const { inputs, handleInputChange, handleSubmit } = useForm(
+		initialInputs,
+		onSubmit
+	);
+
+	const renderFields = () => {
+		return fields.map(({ label, name, type }, index) => {
+			return (
+				<Field
+					key={index}
+					className={styles['form__field']}
+					input={{
+						name: name,
+						value: inputs[name],
+						onChange: handleInputChange,
+						type: type
+					}}
+					label={label}
+					error={errors[name]}
+				/>
+			);
+		});
+	};
+
 	return (
-		<form className={classMerge} onSubmit={submit}>
+		<form className={classMerge} onSubmit={handleSubmit}>
 			<Title theme={TitleTheme.DARK} className={styles['form__title']}>
 				{title}
 			</Title>
-			<FieldList fields={fields} className={styles['form__field']} />
+			{renderFields()}
 			<Button
 				type={ButtonType.SUBMIT}
 				disabled={false}
@@ -30,7 +68,8 @@ const Form = props => {
 };
 
 Form.propTypes = {
-	submit: PropTypes.func,
+	onSubmit: PropTypes.func,
+	errors: PropTypes.object,
 	title: PropTypes.string,
 	fields: PropTypes.array,
 	button: PropTypes.string,
@@ -39,7 +78,8 @@ Form.propTypes = {
 };
 
 Form.defaultProps = {
-	submit: () => {},
+	onSubmit: () => {},
+	errors: {},
 	title: '',
 	fields: [],
 	button: '',

@@ -5,9 +5,58 @@ import Title, { TitleSize, TitleTheme } from './Title';
 
 storiesOf('Title', module)
 	.add('default', () => <Title>Default Title</Title>)
-	.add('small', () => <Title size={TitleSize.SMALL}>Small Title</Title>)
-	.add('medium', () => <Title size={TitleSize.MEDIUM}>Medium Title</Title>)
-	.add('large', () => <Title size={TitleSize.LARGE}>Large Title</Title>)
-	.add('light', () => <Title theme={TitleTheme.LIGHT}>Light</Title>)
-	.add('dark', () => <Title theme={TitleTheme.DARK}>Dark</Title>)
-	.add('font-light', () => <Title theme={TitleTheme.WHITE}>White</Title>);
+	.add('size', () => {
+		return (
+			<div>
+				<Title size={TitleSize.SMALL}>Small Default</Title>
+				<Title size={TitleSize.MEDIUM}>Medium Default</Title>
+				<Title size={TitleSize.LARGE}>Large Default</Title>
+			</div>
+		);
+	})
+
+	.add('light', () => {
+		return (
+			<div>
+				<Title size={TitleSize.SMALL} theme={TitleTheme.LIGHT}>
+					Small Light
+				</Title>
+				<Title size={TitleSize.MEDIUM} theme={TitleTheme.LIGHT}>
+					Medium Light
+				</Title>
+				<Title size={TitleSize.LARGE} theme={TitleTheme.LIGHT}>
+					Large Light
+				</Title>
+			</div>
+		);
+	})
+	.add('dark', () => {
+		return (
+			<div>
+				<Title size={TitleSize.SMALL} theme={TitleTheme.DARK}>
+					Small Light
+				</Title>
+				<Title size={TitleSize.MEDIUM} theme={TitleTheme.DARK}>
+					Medium Light
+				</Title>
+				<Title size={TitleSize.LARGE} theme={TitleTheme.DARK}>
+					Large Light
+				</Title>
+			</div>
+		);
+	})
+	.add('font-light', () => {
+		return (
+			<div style={{ backgroundColor: 'rgba(0, 0, 0, 0.4)' }}>
+				<Title size={TitleSize.SMALL} theme={TitleTheme.WHITE}>
+					Small Light
+				</Title>
+				<Title size={TitleSize.MEDIUM} theme={TitleTheme.WHITE}>
+					Medium Light
+				</Title>
+				<Title size={TitleSize.LARGE} theme={TitleTheme.WHITE}>
+					Large Light
+				</Title>
+			</div>
+		);
+	});

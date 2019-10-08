@@ -1,0 +1,32 @@
+.burger {
+	display: none;
+	cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+	.burger {
+		display: block;
+	}
+}
+
+.burger__line-1,
+.burger__line-2,
+.burger__line-3 {
+	width: 25px;
+	height: 3px;
+	background-color: black;
+	margin: 5px;
+	transition: all 300ms ease;
+}
+
+.burger__cross .burger__line-1 {
+	transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.burger__cross .burger__line-2 {
+	opacity: 0;
+}
+
+.burger__cross .burger__line-3 {
+	transform: rotate(45deg) translate(-5px, -6px);
+}

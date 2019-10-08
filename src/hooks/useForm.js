@@ -1,13 +1,12 @@
 import { useState } from 'react';
 
-const useForm = (initialInputs, callback) => {
-	const [inputs, setInputs] = useState(initialInputs || {});
+const useForm = (initialInputs = {}, callback) => {
+	const [inputs, setInputs] = useState(initialInputs);
 
 	const handleSubmit = event => {
 		if (event) {
 			event.preventDefault();
 		}
-		console.log('useForm', inputs);
 		if (callback && typeof callback === 'function') {
 			callback(inputs);
 		}

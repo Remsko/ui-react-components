@@ -49,6 +49,16 @@ const Form = props => {
 		});
 	};
 
+	const isDisabled = () => {
+		let input;
+		for (input in inputs) {
+			if (inputs[input] === '') {
+				return true;
+			}
+		}
+		return false;
+	};
+
 	return (
 		<form className={classMerge} onSubmit={handleSubmit}>
 			<Title theme={TitleTheme.DARK} className={styles['form__title']}>
@@ -57,7 +67,7 @@ const Form = props => {
 			{renderFields()}
 			<Button
 				type={ButtonType.SUBMIT}
-				disabled={false}
+				disabled={isDisabled()}
 				className={styles['form__button']}
 			>
 				{button}

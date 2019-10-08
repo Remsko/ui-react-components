@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 import Form from '../Form';
 import { FieldType } from '../../../molecules/Field/Field';
-import { validation, validatorTypes } from '../../../../validation/validation';
+import { validation, validatorType } from '../../../../validation/validation';
 
 const AuthForm = props => {
 	const [errors, setErrors] = useState({});
@@ -11,12 +11,12 @@ const AuthForm = props => {
 		fields: [
 			{
 				label: 'Email',
-				name: validatorTypes.EMAIL,
+				name: validatorType.EMAIL,
 				type: FieldType.EMAIL
 			},
 			{
 				label: 'Password',
-				name: validatorTypes.PASSWORD,
+				name: validatorType.PASSWORD,
 				type: FieldType.PASSWORD
 			}
 		],

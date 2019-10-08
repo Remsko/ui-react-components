@@ -10,16 +10,20 @@ export const FieldType = { ...InputType };
 
 const Field = props => {
 	const { input, label, error, className } = props;
-	const classMerge = classnames(styles.field, className);
+
+	const classField = classnames(styles.field, className);
 	const classError = classnames(styles['field__error-message'], {
 		[styles['field__error-show']]: error
 	});
+	const classSpan = classnames(styles['field__span'], {
+		[styles['field__span-error']]: error
+	});
 
 	return (
-		<div className={classMerge}>
+		<div className={classField}>
 			<Input className={styles['field__input']} {...input} />
 			<Label className={styles['field__label']}>{label}</Label>
-			<span className={styles['field__span']} />
+			<span className={classSpan} />
 			<div className={classError}>{error}</div>
 		</div>
 	);

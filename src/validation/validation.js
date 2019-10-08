@@ -1,25 +1,25 @@
-const validators = {
-	email: require('./type/mail'),
-	password: require('./type/password')
-};
-
-const validatorTypes = {
+const validatorType = {
 	EMAIL: 'email',
 	PASSWORD: 'password'
 };
 
-const validation = inputs => {
-	let errors = {};
+const validators = {
+	[validatorType.EMAIL]: require('./type/mail'),
+	[validatorType.PASSWORD]: require('./type/password')
+};
 
-	console.log('validation', inputs);
-	for (let i in inputs) {
-		const error = validators[i].valid(inputs[i]);
+const validation = inputs => {
+	const errors = {};
+
+	let input;
+	for (input in inputs) {
+		const error = validators[input].valid(inputs[input]);
 
 		if (error) {
-			errors[i] = error;
+			errors[input] = error;
 		}
 	}
 	return errors;
 };
 
-module.exports = { validatorTypes, validation };
+module.exports = { validatorType, validation };

@@ -6,28 +6,15 @@ import Form from './Form';
 import AuthForm from './AuthForm/AuthForm';
 import { FieldType } from '../../molecules/Field/Field';
 
-export const actions = {
-	submit: action('clicked')
-};
-
 const defaultForm = {
 	title: 'Default Title',
-	fields: [
-		{
-			label: 'Email',
-			input: { type: FieldType.EMAIL, value: '', onChange: () => {} }
-		},
-		{
-			label: 'Password',
-			input: { type: FieldType.PASSWORD, value: '', onChange: () => {} }
-		}
-	],
+	fields: [{ label: 'Field label', name: '', type: FieldType.TEXT }],
 	button: 'Submit'
 };
 
 storiesOf('Form', module)
 	.add('default', () => (
-		<Form {...defaultForm} {...actions}>
+		<Form {...defaultForm} onSubmit={action('submit')}>
 			Have you got some form ? Create form
 		</Form>
 	))

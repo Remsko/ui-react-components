@@ -4,7 +4,7 @@
 	display: inline-block;
 	color: var(--color-light);
 	cursor: pointer;
-	transition: all 250ms ease-out 0s;
+	transition: all 250ms ease-out;
 }
 
 .link:hover {

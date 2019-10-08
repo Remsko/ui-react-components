@@ -24,7 +24,7 @@
 	color: var(--color-dark);
 	transform: translateX(calc(var(--input-padding) * -1))
 		translateY(calc((var(--field-size) - var(--input-padding)) * -1));
-	font-size: calc(var(--input-font-size) - 0.2rem);
+	font-size: calc(var(--input-font-size) - 0.1rem);
 }
 
 .field__span {
@@ -36,7 +36,7 @@
 	background: var(--color-disabled);
 }
 
-.field .field__span:before {
+.field__span:before {
 	content: '';
 	position: absolute;
 	top: 0;
@@ -51,7 +51,7 @@
 	width: 100%;
 }
 
-.field .field__error-message {
+.field__error-message {
 	font-family: var(--font);
 	font-size: 0.9rem;
 	position: absolute;
@@ -61,7 +61,15 @@
 	transition: color 250ms ease-out, bottom 100ms ease-out;
 }
 
-.field .field__error-show {
+.field__error-show {
 	bottom: -1.4rem;
-	color: rgb(180, 20, 50);
+	color: rgb(180, 20, 70);
+}
+
+.field__span-error {
+	background: linear-gradient(
+		120deg,
+		var(--color-disabled),
+		rgb(180, 20, 70)
+	);
 }

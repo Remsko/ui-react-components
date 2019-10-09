@@ -12,12 +12,16 @@ const Field = props => {
 	const { input, label, error, className } = props;
 
 	const classField = classnames(styles.field, className);
-	const classError = classnames(styles['field__error-message'], {
-		[styles['field__error-show']]: error
-	});
-	const classSpan = classnames(styles['field__span'], {
-		[styles['field__span-error']]: error
-	});
+	// prettier-ignore
+	const classError = classnames(
+		styles['field__error-message'], 
+		{ [styles['field__error-show']]: error }
+	);
+	// prettier-ignore
+	const classSpan = classnames(
+		styles['field__span'],
+		{ [styles['field__span-error']]: error }
+	);
 
 	return (
 		<div className={classField}>

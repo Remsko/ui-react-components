@@ -1,12 +1,12 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
-import Burger, { BurgerCrossClass } from './Burger';
+import Burger from './Burger';
 
 storiesOf('Burger', module)
 	.add('default', () => {
 		return <Burger />;
 	})
 	.add('cross', () => {
-		return <Burger className={BurgerCrossClass} />;
+		return <Burger isCrossed={true} />;
 	});

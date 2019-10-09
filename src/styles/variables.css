@@ -10,6 +10,7 @@
 	--color-font-light: #f5f5f5;
 	--color-disabled: #d1c4c4;
 	--color-form: #fff0f5dc;
+	--color-error: #b41447;
 
 	/* Paddings */
 	--input-padding: 0.4rem;
@@ -17,7 +18,7 @@
 	/* Sizes */
 	--button-font-size: 0.9rem;
 	--input-font-size: 1rem;
-	--border-size: 2px;
+	--border-size: 1px;
 	--border-radius-default: 5px;
 	--border-radius: 10px;
 	--field-size: calc(var(--input-font-size) + var(--input-padding) * 2.5);

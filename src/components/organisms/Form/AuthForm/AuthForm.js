@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import Form from '../Form';
 import { FieldType } from '../../../molecules/Field/Field';
 import { validation, validatorType } from '../../../../validation/validation';
+import Link, { LinkTheme } from '../../../atoms/Link/Link';
 
 const AuthForm = props => {
 	const [errors, setErrors] = useState({});
@@ -29,7 +30,10 @@ const AuthForm = props => {
 
 	return (
 		<Form onSubmit={submitHandler} errors={errors} {...config}>
-			Don't have account ? Sign up
+			Don't have account ?{' '}
+			<Link theme={LinkTheme.JUMP} to='/signup'>
+				Sign up
+			</Link>
 		</Form>
 	);
 };

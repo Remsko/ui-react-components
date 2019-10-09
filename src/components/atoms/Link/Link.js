@@ -1,6 +1,7 @@
 import React from 'react';
-import { NavLink as PureNavLink, Link as PureLink } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import classnames from 'classnames';
+import { NavLink as PureNavLink, Link as PureLink } from 'react-router-dom';
 
 import styles from './Link.module.css';
 
@@ -15,7 +16,7 @@ export const NavLink = props => {
 	const classMerge = classnames(styles.link, styles[theme], className);
 
 	return (
-		<PureNavLink className={classMerge} {...props}>
+		<PureNavLink {...props} className={classMerge}>
 			{children}
 		</PureNavLink>
 	);
@@ -26,9 +27,22 @@ const Link = props => {
 	const classMerge = classnames(styles.link, styles[theme], className);
 
 	return (
-		<PureLink className={classMerge} {...props}>
+		<PureLink {...props} className={classMerge}>
 			{children}
 		</PureLink>
 	);
 };
+
+Link.propTypes = NavLink.propTypes = {
+	theme: PropTypes.string,
+	className: PropTypes.string,
+	children: PropTypes.any
+};
+
+Link.defaultProps = NavLink.defaultProps = {
+	theme: LinkTheme.DEFAULT,
+	className: '',
+	children: ''
+};
+
 export default Link;

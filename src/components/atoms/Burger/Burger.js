@@ -3,17 +3,19 @@ import classnames from 'classnames';
 
 import styles from './Burger.module.css';
 
-export const BurgerCrossClass = styles['burger__cross'];
-
 const Burger = props => {
-	const { onClick, className } = props;
-	const classMerge = classnames(styles.burger, className);
+	const { isCrossed, onClick, className } = props;
+	const classMerge = classnames(
+		styles.burger,
+		{ [styles['burger__cross']]: isCrossed },
+		className
+	);
 
 	return (
 		<div className={classMerge} onClick={onClick}>
-			<div className={styles['burger__line-1']} />
-			<div className={styles['burger__line-2']} />
-			<div className={styles['burger__line-3']} />
+			<div className={styles['burger__line']} />
+			<div className={styles['burger__line']} />
+			<div className={styles['burger__line']} />
 		</div>
 	);
 };

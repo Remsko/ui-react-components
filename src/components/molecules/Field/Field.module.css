@@ -8,7 +8,7 @@
 
 .field__input {
 	position: absolute;
-	width: 100% /*calc(100% - var(--input-padding) * 2)*/;
+	width: 100%;
 }
 
 .field__label {
@@ -63,13 +63,13 @@
 
 .field__error-show {
 	bottom: -1.4rem;
-	color: rgb(180, 20, 70);
+	color: var(--color-error);
 }
 
 .field__span-error {
 	background: linear-gradient(
 		120deg,
 		var(--color-disabled),
-		rgb(180, 20, 70)
+		var(--color-error)
 	);
 }

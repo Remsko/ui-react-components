@@ -8,7 +8,14 @@ import NavBar from './components/organisms/NavBar/NavBar';
 const App = () => {
 	return (
 		<BrowserRouter>
-			<NavBar />
+			<NavBar
+				links={[
+					{ title: 'Home', destination: '/home' },
+					{ title: 'About', destination: '/about' },
+					{ title: 'Work', destination: '/work' },
+					{ title: 'Projects', destination: '/projects' }
+				]}
+			/>
 			<div className={view.center}>
 				<AuthForm />
 			</div>

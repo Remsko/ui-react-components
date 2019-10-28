@@ -9,7 +9,7 @@ const dummyLogo = (
 		style={{
 			color: 'rgb(190, 190, 190)',
 			background:
-				'linear-gradient(to left, rgb(186, 150, 186), rgb(206, 170, 206))',
+				'linear-gradient(to right, rgb(166, 130, 166), #32174d)',
 			'-webkit-background-clip': 'text',
 			'-webkit-text-fill-color': 'transparent',
 			textTransform: 'uppercase',

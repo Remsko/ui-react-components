@@ -23,7 +23,7 @@ const NavBar = props => {
 
 	const scaleFadeIn = index => {
 		if (isActive) {
-			const time = index / 5 + 0.2;
+			const time = index / 6 + 0.1;
 			return `${styles.navLinkFade} 500ms ease forwards ${time}s`;
 		}
 	};

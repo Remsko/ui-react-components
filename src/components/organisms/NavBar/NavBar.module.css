@@ -4,9 +4,11 @@
 	display: flex;
 	justify-content: space-around;
 	align-items: center;
-	min-height: 8vh;
+	min-height: 4.5rem;
 	background-color: var(--color-font-light);
 	z-index: 1;
+	border-bottom: 0.2rem solid var(--color-dark);
+	transition: border-color 2s ease;
 }
 
 @media screen and (min-width: 768px) {
@@ -46,17 +48,20 @@
 		position: absolute;
 		width: 60vw;
 		right: -60vw;
-		height: 92vh;
-		top: 8vh;
+		height: calc(100vh - 4.5rem);
+		top: 4.5rem;
 		background-color: var(--color-font-light);
+		border-bottom: 0.2rem solid var(--color-dark);
 		display: flex;
 		flex-direction: column;
 		align-items: center;
+		justify-content: center;
 		transition: right 300ms ease-in;
 		z-index: 1;
 	}
 	.navbar__links li {
 		opacity: 0;
+		padding: 1rem 0;
 	}
 	.navbar__active {
 		right: 0;

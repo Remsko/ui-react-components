@@ -1,0 +1,74 @@
+@import '../../../styles/variables.css';
+
+.navigation-circle {
+	display: block;
+	position: relative;
+	height: var(--circle-diameter);
+	width: var(--circle-diameter);
+	margin: auto;
+	background-color: var(--circle-color);
+	border-radius: 50%;
+}
+
+.navigation-circle__list {
+	display: block;
+	position: absolute;
+	height: var(--circle-diameter);
+	width: var(--circle-diameter);
+	transform: rotate(-90deg);
+	/* animation: #{1 +
+		(($point_count / $start_anim_delta) - 1 / $start_anim_delta)}s
+		cubic-bezier(0.25, -0.25, 0.35, 1) 0 1 animate-in-list forwards; */
+}
+
+.navigation-circle-list-item {
+	display: block;
+	position: absolute;
+	height: 0;
+	width: calc(50% + var(--point-radius));
+	top: 50%;
+	left: 50%;
+	list-style: none;
+	transform-origin: 0 0;
+	background-color: #f5f5f5;
+}
+
+.navigation-circle-list-item__point {
+	display: block;
+	position: absolute;
+	height: calc(var(--point-diameter));
+	width: calc(var(--point-diameter));
+	top: calc(var(--point-radius) * -1);
+	right: 0;
+	cursor: pointer;
+	background-color: var(--point-color);
+	border-radius: 50%;
+}
+
+.navigation-circle-list-item__meta {
+	display: block;
+	position: absolute;
+	top: calc(-100% - 8px);
+	left: 0;
+	width: 120px;
+	margin: var(--point-diameter);
+	padding: 8px;
+}
+
+.navigation-circle-list-item__title {
+	display: block;
+	color: black;
+	text-align: center;
+	font-size: 15px;
+	margin-bottom: 6px;
+	border-bottom: 1px solid black;
+	padding-bottom: 2px;
+}
+
+.navigation-circle-list-item__description {
+	display: block;
+	color: black;
+	text-align: center;
+	font-weight: 200;
+	font-size: 10px;
+}

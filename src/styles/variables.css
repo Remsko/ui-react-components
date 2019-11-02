@@ -22,4 +22,12 @@
 	--border-radius-default: 5px;
 	--border-radius: 10px;
 	--field-size: calc(var(--input-font-size) + var(--input-padding) * 2.5);
+
+	/* Circle */
+	--circle-color: #fff0f5;
+	--circle-radius: 150px;
+	--circle-diameter: 300px;
+	--point-radius: 16px;
+	--point-diameter: 32px;
+	--point-color: #d1c4c4;
 }

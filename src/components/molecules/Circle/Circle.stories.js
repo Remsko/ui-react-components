@@ -56,7 +56,7 @@ const dummyList = [
 	}
 ];
 
-storiesOf('Circle', module).add('one element', () => (
+storiesOf('Circle', module).add('ten elements', () => (
 	<div
 		style={{
 			display: 'flex',

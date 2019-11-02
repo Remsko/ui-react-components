@@ -25,9 +25,9 @@
 
 	/* Circle */
 	--circle-color: #fff0f5;
-	--circle-radius: 150px;
-	--circle-diameter: 300px;
-	--point-radius: 16px;
-	--point-diameter: 32px;
+	--circle-radius: 200px;
+	--circle-diameter: 400px;
+	--point-radius: 10px;
+	--point-diameter: 20px;
 	--point-color: #d1c4c4;
 }

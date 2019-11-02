@@ -4,50 +4,34 @@ import styles from './Circle.module.css';
 
 const Circle = props => {
 	return (
-		<div className={styles['navigation-circle']}>
+		<div className={styles.circle}>
 			{/* circle */}
-			<ul className={styles['navigation-circle__list']}>
+			<ul className={styles.list}>
 				{props.list.map((item, idx) => {
 					const angle = (360 / props.list.length) * idx;
 					return (
 						<li
 							key={idx}
-							className={styles['navigation-circle-list-item']}
+							className={styles.listItem}
 							style={{
 								transform: `rotateZ(${angle}deg)`
 							}}
 						>
 							<a
 								href={item.path}
-								className={
-									styles['navigation-circle-list-item__point']
-								}
+								className={styles.listItemPoint}
 							>
 								<div
-									className={
-										styles[
-											'navigation-circle-list-item__meta'
-										]
-									}
+									className={styles.listItemMeta}
 									style={{
 										transform: `rotateZ(${90 - angle}deg)`
 									}}
 								>
-									<h1
-										className={
-											styles[
-												'navigation-circle-list-item__title'
-											]
-										}
-									>
+									<h1 className={styles.listItemTitle}>
 										{item.title}
 									</h1>
 									<span
-										className={
-											styles[
-												'navigation-circle-list-item__description'
-											]
-										}
+										className={styles.listItemDescription}
 									>
 										{item.description}
 									</span>
